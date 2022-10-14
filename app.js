@@ -206,5 +206,10 @@ const promptIntern = () => {
 })
 };
 const buildTeam = () => {
-    console.log('buildTeam')
+    console.log('build Team');
+    if (!fs.existsSync (output_Dir)){
+        fs.mkdirSync(output_Dir)
+    }
+    fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
 }
+promptManager();
