@@ -16,7 +16,7 @@ test("test geID () method", () => {
 });
 
 test("test the email address geEmail() method", () => {
-  expect(employee.getEmail()).toBe("Jaime21@ yahoo.com ");
+  expect(employee.getEmail()).toBe("Jaime21@ yahoo.com");
 });
 
 test("test the role of employee getRole() method", () => {
