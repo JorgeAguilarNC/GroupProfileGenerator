@@ -41,7 +41,7 @@ const promptManager = () => {
       },
       {
         type: "input",
-        name: "email",
+        name: "Email",
         message: "enter your E-mail address (Required)",
         validate: (email) => {
           if (email) {
@@ -87,18 +87,22 @@ const promptMenu = () => {
         name: "menu",
         message: "Please select which option you would like to continue with:",
         choices: [
+          "add an manager",
           "add an engineer",
           "add an intern",
-          "finish building my ream",
+          "finish building my tream",
         ],
       },
     ])
     .then((userChoice) => {
       switch (userChoice.menu) {
+        case "add an manager":
+          promptManager();
+          break;
         case "add an engineer":
           promptEngineer();
           break;
-        case "add anintern":
+        case "add an intern":
           promptIntern();
           break;
         default:
@@ -106,7 +110,7 @@ const promptMenu = () => {
       }
     });
 };
-
+//Engineer
 const promptEngineer = () => {
   console.log("Add a New Engineer");
   return inquire
@@ -224,7 +228,7 @@ const promptIntern = () => {
     ])
     .then((answers) => {
       console.log(answers);
-      const intern = new intern(
+      const intern = new Intern(
         answers.name,
         answers.employeeID,
         answers.email,
@@ -241,4 +245,4 @@ const buildTeam = () => {
   }
   fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
 };
-promptManager();
+promptMenu();

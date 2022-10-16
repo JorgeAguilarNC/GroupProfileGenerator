@@ -4,31 +4,30 @@ const generateTeam = (team) => {
   //generate manager card
   const generateManager = (manager) => {
     console.log(manager);
-    let managerHtml = (
-      //Bootstrap code
-      <div class='card' style='width: 18rem;'>
-        <div class='card-header'>
-          ${manager.name} <br />
-          <i class='fas fa-mug-hot'></i>Manager
-        </div>
-        <ul class='list-group list-group-flush'>
-          <li class='list-group-item'>ID: ${manager.id}</li>
-          <li class='list-group-item'>
-            Email:
-            <span id='email'>
-              <a href='mailto:${manager.email}'></a>{" "}
-            </span>
-          </li>
-          <li class='list-group-item'>office number:${manager.officeNumber}</li>
-        </ul>
+    let managerHtml = `
+    \//Bootstrap code
+    <div class='card' style='width: 18rem;'>
+      <div class='card-header'>
+        ${manager.name} <br />
+        <i class='fas fa-mug-hot'></i>Manager
       </div>
-    );
+      <ul class='list-group list-group-flush'>
+        <li class='list-group-item'>ID: ${manager.id}</li>
+        <li class='list-group-item'>
+          Email:
+          <span id='email'>
+            <a href='mailto:${manager.email}'></a>${manager.email}
+          </span>
+        </li>
+        <li class='list-group-item'>office number:${manager.officeNumber}</li>
+      </ul>
+    </div>`;
     html.push(managerHtml);
   };
 
   const generateEngineer = (engineer) => {
     console.log(engineer);
-    let engineerHtml = (
+    let engineerHtml = `
       <div class='card' style='width: 18rem;'>
         <div class='card-header'>
           ${engineer.name} <br />
@@ -42,24 +41,16 @@ const generateTeam = (team) => {
               <a href='mailto:${engineer.email}'>${engineer.email}</a>
             </span>
           </li>
-          <li class='list-group-item'>
-            Github username:{" "}
-            <a
-              target='blank'
-              href='https://github.com/${engineer.githubUsername}'>
-              ${engineer.githubUsername}
-            </a>{" "}
-          </li>
         </ul>
       </div>
-    );
-    html.push(engineerHtmlHTML);
+    `;
+    html.push(engineerHtml);
   };
 
   const generateIntern = (intern) => {
     console.log(intern);
-    let internHtml = (
-      <div class='card' style='width: 18rem;'>
+    let internHtml = `
+    <div class='card' style='width: 18rem;'>
         <div class='card-header'>
           ${intern.name} <br />
           <i class='fas fa-user-graduate'></i>intern
@@ -76,21 +67,26 @@ const generateTeam = (team) => {
           <li class='list-group-item'>school: ${intern.school} </li>
         </ul>
       </div>
-    );
-    html.push(internHtmlHTML);
+    `;
+    html.push(internHtml);
   };
   //for look for employees
+
   for (let i = 0; i < team.length; i++) {
-    if (team[i].getrole() === "manager") {
+    console.log(team[i], i);
+
+    if (team[i].getRole() === "Manager") {
       generateManager(team[i]);
     }
-    if (team[i].getrole() === "engineer") {
-      generateIntern(team[i]);
+    if (team[i].getRole() === "Engineer") {
+      generateEngineer(team[i]);
     }
-    if (team[i].getrole() === "intern") {
+    if (team[i].getRole() === "Intern") {
       generateIntern(team[i]);
     }
   }
+  console.log(html, html.join(""));
+
   //html blocks
   return html.join("");
 };
@@ -105,7 +101,7 @@ module.exports = (team) => {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/c59e55c46d.js"></script>
-    <link rel="stylesheet" href="..//assets\style.css"/>
+    <link rel="stylesheet" href="..//assets/style.css"/>
     <title>Team Profile Generator</title>
 </head>
 

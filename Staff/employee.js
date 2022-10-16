@@ -11,7 +11,7 @@ class employee {
     return this.id;
   }
   getEmail() {
-    return thhis.email;
+    return this.email;
   }
   getRole() {
     return "employee";
