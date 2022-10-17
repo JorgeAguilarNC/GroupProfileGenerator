@@ -41,7 +41,7 @@ const promptManager = () => {
       },
       {
         type: "input",
-        name: "Email",
+        name: "email",
         message: "enter your E-mail address (Required)",
         validate: (email) => {
           if (email) {
@@ -184,7 +184,7 @@ const promptEngineer = () => {
 //intern
 const promptIntern = () => {
   console.log("add a new intern ");
-  return inquirer
+  return inquire
     .prompt([
       {
         type: "input",
@@ -214,14 +214,29 @@ const promptIntern = () => {
       },
       {
         type: "input",
-        name: "school",
+        name: "schoolName",
         message: "Ener your school name. )Required)",
-        validate: (school) => {
-          if (school) {
+        validate: (schoolName) => {
+          if (schoolName) {
             return true;
           } else {
             console.log("Please enter your school name!");
             return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "Enter your employee Id (Required)",
+        validate: (employeeId) => {
+          if (employeeId) {
+            if (employeeId) {
+              return true;
+            } else {
+              console.log("Please enter your employee Id!");
+              return false;
+            }
           }
         },
       },
@@ -230,7 +245,7 @@ const promptIntern = () => {
       console.log(answers);
       const intern = new Intern(
         answers.name,
-        answers.employeeID,
+        answers.employeeId,
         answers.email,
         answers.schoolName
       );

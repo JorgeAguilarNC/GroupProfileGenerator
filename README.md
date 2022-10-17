@@ -22,3 +22,6 @@ https://github.com/JorgeAguilarNC/groupProfileGenerator
 
 link to a walkthrough video that demonstrates its functionality.
 chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/cacd2375-6b00-486c-ydf8-98e3e040fd1e
+
+Video loading page after npm
+https://drive.google.com/file/d/1OFHo45p4v3o0ZtZv_VwgmXB7Vvt9YfWH/view

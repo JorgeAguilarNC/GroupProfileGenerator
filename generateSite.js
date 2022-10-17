@@ -5,7 +5,6 @@ const generateTeam = (team) => {
   const generateManager = (manager) => {
     console.log(manager);
     let managerHtml = `
-    \//Bootstrap code
     <div class='card' style='width: 18rem;'>
       <div class='card-header'>
         ${manager.name} <br />
@@ -58,13 +57,12 @@ const generateTeam = (team) => {
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>ID: ${intern.id}</li>
           <li class='list-group-item'>
-            {" "}
-            Email:{" "}
+            Email:
             <span id='email'>
-              <a href='mailto: ${intern.email}'>${intern.email}</a>{" "}
-            </span>{" "}
+              <a href='mailto: ${intern.email}'>${intern.email}</a>
+            </span>
           </li>
-          <li class='list-group-item'>school: ${intern.school} </li>
+          <li class='list-group-item'>school: ${intern.schoolName} </li>
         </ul>
       </div>
     `;
